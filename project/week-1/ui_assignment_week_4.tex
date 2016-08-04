@@ -1,0 +1,150 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[margin=1in,includefoot]{geometry}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+}
+
+\begin{document}
+\title{UI-101: Week 4 Assignments}
+\date{}
+\author{}
+\maketitle
+
+\begin{flushleft}
+This week assignments focus on 2 main topics that are covered during the training section including Git and AngularJS MVC framework. By completing the assignments, candidates would be able to work on applications that utilizing Git version control and to develop Single Page Applications using AngularJS framework \\
+\vspace{5mm}
+Before beginning the assignments, please complete the prerequisites:
+\vspace{5mm}\\
+\begin{enumerate}
+	\item Navigate to the following URL to prepare cloning the needed repository
+ 	\url{https://github.com/tachymetre?tab=repositories}
+ 	\item Clone the pre-built "dashboard" project\\
+ 	-	Using Sourcetree: \\
+ 	\vspace{2mm}
+Add the following URL to the "New Repository" field \url{https://github.com/tachymetre/{{repo_name}}.git}\\
+	\vspace{5mm}
+ 	-	Using CLI: \\
+Type the following command into the CLI of your choice
+\begin{verbatim}
+git clone https://github.com/tachymetre/{{repo_name}}.git
+\end{verbatim}
+\item Navigate to the application folder to read up on steps (`README.md`) to build Dashboard application and start Dashboard server\\
+\end{enumerate}
+\end{flushleft}
+
+\section{Assignment 1: dashboard\_app}
+Create the Dashboard application given the provided files in the project folder from the remote repository. The application will be a Single Page Application with multiple pages all mapped to one `index.html` file only. The application must be able to have multiple controllers for each single page, multiple services to retrieve appropriate APIs from the server, and a single directive to perform certain DOM manipulation. The application layout would also be completed using the known technology of HTML and CSS. This application will be completed as a group, not individual so be prepare to create branches for each individual as well as merge them later into one main branch as the final copy
+\begin{itemize}
+	\item Folder structure
+	\begin{verbatim}
+dashboard/
+  |  app/
+  |  |   assets/
+  |  |   |   images/
+  |  |   |   |   src/
+  |  |   |   |   |   app/
+  |  |   |   |   |   |   background.jpg
+  |  |   |   |   |   |   favicon.ico
+  |  |   |   |   |   |   logo.png
+  |  |   |   |   |   profile/
+  |  |   |   |   |   |   darth.png
+  |  |   |   |   |   |   minh.png
+  |  |   |   |   |   work/
+  |  |   |   |   |   |   1.jpg
+  |  |   |   |   |   |   2.jpg
+  |  |   |   |   |   |   3.jpg
+  |  |   |   |   |   |   4.jpg
+  |  |   |   |   |   |   5.jpg
+  |  |   |   |   |   |   6.jpg
+  |  |   |   |   |   |   7.jpg
+  |  |   |   |   |   |   8.jpg
+  |  |   |   |   |   |   9.jpg
+  |  |   |   |   |   |   10.jpg
+  |  |   |   styles/
+  |  |   scripts/
+  |  |   |   controllers/
+  |  |   |   directives/
+  |  |   |   services/
+  |  |   |   app.js
+  |  |   templates/
+  |  |   |   404.html
+  |  |   favicon.ico
+  |  |   index.html
+  |  dashboardServer/
+  |	 |	 bin/
+  |	 |	 |	 www
+  |  |   routes/
+  |  |   |   category.js
+  |  |   |   index.js
+  |  |   |   location.js
+  |  |   |   login.js
+  |  |   |   profile.js
+  |  |   |   users.js
+  |  |   |   work.js
+  |  |   views/
+  |  |   |   error.jade
+  |  |   |   index.jade
+  |  |   |   layout.jade
+  |  |   app.js
+  |  |   package.json
+  |  .gitignore
+  |  bower.json
+  |  Gruntfile.js
+  |  package.json
+  |  README.md
+  |  robots.txt
+	\end{verbatim}	
+All the file names mentioned in the folder structure will be provided upfront. Custom script and style file(s) must be placed in the appropriate folder within the structure
+	\item Instructions
+	\begin{itemize}
+	\item Branches
+		\begin{itemize}
+		\item Each individual working on the application will have to create his/her own branch with the following syntax: "dashboard@0.1.0-\{\{functionality\}\}". For example, if a person is working on a "login" functionality, the branch that would need to be created will be: "dashboard@0.1.0-login"
+		\item The main branch that includes the final working application will be named: "dashboard@0.1.0". Please only use this branch to merge the complete implementation from other branches and to deliver the final product. Each developer is resposible for the changes he/she made to the main branch. When getting merged, this main branch should work correctly with the given codes and the reposibility to maintain this branch will be on the whole team
+		\item There is no limit on how many branches need to be created as long as the final branch "dashboard@0.1.0" is working properly. Please do not work on the "master" branch since the original state of the application when started will be preserved within this location
+		\end{itemize}
+	\end{itemize}
+	\item Requirements	
+		\begin{itemize}
+		\item HTML
+			\begin{itemize}
+				\item The document must be declared using HTML5 syntax
+				\item The document must have a title tag `Dashboard' that describes the title for the web page
+				\item The document must have the external stylesheets included in the head section
+				\item The document must have the script file(s) included in the bottom of the document, before closing the body tag
+				\item For template document files, it would not need HTML5 declarations and proper document elements
+			\end{itemize}
+		\item CSS
+			\begin{itemize}
+				\item Use external stylesheets for the application, not inside the document file. This applies to both vendor stylesheets as well as custom stylesheets
+				\item The application must be responsive on multiple devices of different widths. This can be done using Bootstrap and media querries
+				\item Be sure to provide comments to the stylesheet(s) if needed
+				\item The stylesheet should have appropriate prefixers so that when viewing on modern browsers (i.e Chrome, Firefox, Safari, IE 11+), the user interface should be the same
+			\end{itemize}
+		\item AngularJS
+			\begin{itemize}
+				\item The application must have a working login page. When logging in the incorrect users, the login attempt would be unsuccessful. Otherwise, navigate to the work section
+				\item When logging in, the app must have the side bar navigation with links mapped to each section of dashboard app
+				\item The application must have a header that displays information about the company logo, username, date logged in and a "Log Out" button that can sign out a login user
+				\item For the main view of the application, it would be done as subviews using the routing architecture to map the correct views to the correct paths
+				\item The first phase of the application would be to complete the "work" section by displaying the items with 2 designs: list and card
+				\item The application must have filter functionality based on the user inputs for "work" section
+				\item The application must have 2 buttons: "Select design" to switch between different design and "Add item" to display a dialog for users to add new item
+				\item Each item displayed in the app must have the title, author, number of likes and comments grabbed from the service APIs
+				\item For each of the item in the application, it must be accompanied with 2 links: "Edit" and "Delete". These links would do the appropriate functionalities based on their names
+				\item Controllers must be used for each section and the single directive must be sed for the "Add" and "Edit" functionality. "Delete" functionality would be taken care by controller functions
+				\item Routing architecture of the application must be taken care in the "app.js" and each route must be mapped to the corresponding views they are associated with 
+				\item If the file(s) has multiple functions within, be sure to include comments for descriptive purpose
+			\end{itemize}
+		\end{itemize}
+	\item Sample Demo\\
+	Please check out the `sample\_demo' folder for more details 
+\end{itemize}
+
+\end{document}
